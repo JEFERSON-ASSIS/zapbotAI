@@ -3,7 +3,7 @@ const venom = require('venom-bot');
 const dialogflow = require('@google-cloud/dialogflow');
 
 // INICIANDO O DIALOGFLOW E CONFIGURANDO COM O USO DA KEY GERADA EM JSON, DEVE SE ENCONTRAR NA RAIZ DO PROJETO
-const sessionClient = new dialogflow.SessionsClient({keyFilename: "./teste-qrscuw-872f2225e85c.json"});
+const sessionClient = new dialogflow.SessionsClient({keyFilename: "./guia-obmn-1082a107e116.json"});
 // FUNCOES USADAS DA DOCUMENTACAO NORMAL QUE ESTAO NO README.md EM LINKS ÚTEIS
 async function detectIntent(
     projectId,
@@ -80,7 +80,7 @@ function start(client) {
     // FUNCAO QUE CAPTURA AS MENSAGEM CHEGADAS DO WPP USANDO O VENOM
     client.onMessage(async message => {
         // EXECUTANDO QUERY DIALOGFLOW
-        let textoResposta = await executeQueries("teste-qrscuw", message.from, [message.body], 'pt-BR')
+        let textoResposta = await executeQueries("guia-obmn", message.from, [message.body], 'pt-BR')
         // ENVIANDO QUERY RETORNADA
         await client.sendText(message.from, textoResposta);
     })
